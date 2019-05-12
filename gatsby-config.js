@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `TOYO Cure Natural Aqua Gel`,
-    description: `Hydrogen Activated Water Skin Exfoliator Suitable for All Skin Types (8.5 Ounce / 250 Milliliter)`,
+    title: `Habit Control`,
+    description: `Nicotine Replacement Gum and Patches`,
     author: `@bbingllc`,
     siteUrl: `https://my-gatsby-project.kiwiben.now.sh/`,
   },
@@ -9,6 +9,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     "gatsby-plugin-robots-txt",
+    `gatsby-transformer-json`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -54,14 +57,12 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
-    `gatsby-transformer-json`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `aqua gel`,
+        short_name: `Habit Control`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

@@ -3,14 +3,29 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import StructData from "../components/structdata"
+import StructData2 from "../components/structdata2"
 
 export const query = graphql`
   query($slug: String!) {
     productsJson(slug: { eq: $slug }) {
       name
+      brand
+      category
+      sku
+      slug
       description
       price
+      currency
+      MPN
+      UPC
+      EAN
+      condition
+      multipack
+      is_bundle
+      shipping
+      tax
+      availability
+      googleProductCategory
       image {
         childImageSharp {
           fluid {
@@ -27,9 +42,9 @@ const Product = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-
+      <StructData2 product={product} />
       <div>
-        <h1>{product.title}</h1>
+        <h1>{product.name}</h1>
         <Image
           fluid={product.image.childImageSharp.fluid}
           alt={product.name}
@@ -42,7 +57,6 @@ const Product = ({ data }) => {
         <p>{product.price}</p>
         <div dangerouslySetInnerHTML={{ __html: product.description }} />
       </div>
-      <StructData />
     </Layout>
   )
 }
